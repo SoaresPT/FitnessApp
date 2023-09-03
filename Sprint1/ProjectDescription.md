@@ -1,5 +1,5 @@
 # FitnessApp Website
-
+Group 1: Andrii Deshko, Sérgio Dias Soares, Elias Vuorinen & Veikko Pelkonen
 ## Project Description
 
 FitnessApp is a dynamic and user-centered website made to give fitness enthusiasts, athletes, trainers, coaches, and people seeking to improve their health more power. It focuses on providing useful resources and tools that help users in swiftly and effectively achieving their fitness goals.
