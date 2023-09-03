@@ -39,7 +39,7 @@ FitnessApp aspires to be the go-to platform for anyone pursuing a healthier life
 
 ## Figma Board
 
-The user's stories board can be found <a href="https://raw.githubusercontent.com/SoaresPT/FitnessApp/main/Sprint1/UserStories.png?token=GHSAT0AAAAAACFPDCLUHMT4YC5VEPG4RDDQZHTZU5Q" target="_blank">here</a>. A link to the figma board itself [here](https://www.figma.com/file/XE3o6goZev84jG6gz2lWin/User-Stories?type=whiteboard&node-id=0%3A1&t=irW5hs5HSlMwItbG-1)
+A link to the figma board can be found [here](https://www.figma.com/file/XE3o6goZev84jG6gz2lWin/User-Stories?type=whiteboard&node-id=0%3A1&t=irW5hs5HSlMwItbG-1)
 
 ## Low-fidelity prototype
 
