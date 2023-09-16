@@ -4,6 +4,8 @@ const express = require('express')
 const cors = require('cors')
 const workoutRoutes = require('./routes/workouts')
 const customMiddleware = require('./middleware/customMiddleware');
+const signupRoutes = require('./routes/signup');
+
 
 // express app
 const app = express()
@@ -30,5 +32,8 @@ app.use('/api/workouts', workoutRoutes);
 app.use(customMiddleware.unknownEndpoint);
 
 app.use(customMiddleware.errorHandler)
+
+app.use('/api', signupRoutes);
+
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

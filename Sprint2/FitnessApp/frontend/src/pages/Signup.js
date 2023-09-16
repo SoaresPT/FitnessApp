@@ -1,14 +1,35 @@
-import { useState } from "react"
+import React, { useState } from "react";
 
 const Signup = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    console.log(email, password)
-  }
+    try {
+      const response = await fetch("http://localhost:3001/api/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        // Request was successful
+        const data = await response.json();
+        console.log("Signup successful!", data);
+      } else {
+        // Request failed
+        const errorData = await response.json();
+        console.error("Signup failed:", errorData);
+      }
+    } catch (error) {
+      // Handle network or other errors
+      console.error("Error:", error);
+    }
+  };
 
   return (
     <form className="signup" onSubmit={handleSubmit}>
@@ -29,7 +50,7 @@ const Signup = () => {
 
       <button>Sign up</button>
     </form>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;
