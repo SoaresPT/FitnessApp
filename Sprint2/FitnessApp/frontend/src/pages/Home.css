@@ -1,0 +1,120 @@
+/* styles.css */
+.photo{
+    height: 120%;
+    width: 95%;
+    position:absolute;
+    top: 0%;
+    left: 2%;
+    background-image: url('../ha.jpeg'); /* Replace 'your-image.jpg' with the path to your image */
+    background-size: 110%; /* Cover the entire viewport */
+    background-position:top; /* Center the image horizontally and vertically */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    
+}
+.foreground{
+    color: rgb(0, 0, 0); /* Text color */
+    text-align:start; /* Center-align the text horizontally */
+    position: absolute; /* Position the text absolutely within the container */
+    top: 50%; /* Move the text 50% from the top of its containing block */
+    left: 24%; /* Move the text 50% from the left of its containing block */
+    transform: translate(-50%, -50%); 
+}
+h1 {
+    padding: 0%;
+    margin: 0;
+    line-height: 1;
+}
+.First_Text {
+    font-family: 'Concert One', cursive;
+    font-size: 600%;
+    font-weight:bolder;
+    
+  }
+  .First_Text {
+    font-family: 'Concert One', cursive;
+    font-size: 600%;
+    font-weight:bolder;
+  }
+  
+  .second {
+    font-family: 'Concert One', cursive;
+    font-size: 200%;
+    font-weight:bolder;
+    color: rgb(0, 0, 0); /* Text color */
+    text-align:start; /* Center-align the text horizontally */
+    position: absolute; /* Position the text absolutely within the container */
+    top: 120%; /* Move the text 50% from the top of its containing block */
+    left: 50%; /* Move the text 50% from the left of its containing block */
+    transform: translate(-50%, -50%); 
+    
+  }
+.third{
+    font-family: 'Concert One', cursive;
+    font-size: 200%;
+    font-weight:bolder;
+    color: rgb(0, 0, 0); /* Text color */
+    text-align:start; /* Center-align the text horizontally */
+    position: absolute; /* Position the text absolutely within the container */
+    top: 123%; /* Move the text 50% from the top of its containing block */
+    left: 50%; /* Move the text 50% from the left of its containing block */
+    transform: translate(-50%, -50%); 
+    }
+  .fourth {
+    font-family: 'Concert One', cursive;
+    font-size: 200%;
+    font-weight:bolder;
+    color: rgb(0, 0, 0); /* Text color */
+    text-align:start; /* Center-align the text horizontally */
+    position: absolute; /* Position the text absolutely within the container */
+    top: 126%; /* Move the text 50% from the top of its containing block */
+    left: 50%; /* Move the text 50% from the left of its containing block */
+    transform: translate(-50%, -50%); 
+    
+  }
+
+
+.button {
+    
+    background-color: #ffffff; /* Background color */
+    color: #000000; /* Text color */
+    font-family: 'Concert One', cursive;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Text size */
+    position: absolute;
+    top: 140%;
+    left: 37.7%;
+}
+
+.button:hover {
+    background-color: #ffffff;
+    color: #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.links:link
+.links:visited,
+.links:active,
+.links{
+  color: #000000;
+  text-decoration: none;
+}
+.button2 {
+    
+    background-color: #ffffff; /* Background color */
+    color: #000000; /* Text color */
+    font-family: 'Concert One', cursive;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Text size */
+    position: absolute;
+    top: 140%;
+    left: 57.7%;
+}
+
+.button2:hover {
+    background-color: #ffffff;
+    color: #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.blank{
+  top: 170%;
+  color: #fff;
+}
