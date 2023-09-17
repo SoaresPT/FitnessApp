@@ -1,12 +1,9 @@
-// In your controllers file (e.g., userController.js)
-//const User = require('../models/User'); // Assuming you have a User model
+const User = require('../models/userModel');
 const bcrypt = require('bcrypt');
 
 async function signup(req, res) {
   try {
     const { email, password } = req.body;
-
-    // Validate input (e.g., check if email is valid, password meets requirements)
 
     // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
