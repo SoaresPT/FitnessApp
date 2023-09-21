@@ -45,7 +45,35 @@ async function getAllUsers(req, res) {
   }
 }
 
+// Function to delete a user by email
+async function deleteUserByEmail(emailToDelete, req, res) {
+  try {
+    // Find and delete the user by email from your database
+    await User.findOneAndDelete({ email: emailToDelete });
+
+    res.status(200).json({ message: 'User deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+}
+
+// Function to update a user by email
+async function updateUserByEmail(emailToUpdate, updatedUserData, req, res) {
+  try {
+    // Update the user by email in your database
+    await User.findOneAndUpdate({ email: emailToUpdate }, updatedUserData);
+
+    res.status(200).json({ message: 'User updated successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+}
+
 module.exports = {
   signup,
   getAllUsers,
+  deleteUserByEmail,
+  updateUserByEmail,
 };
