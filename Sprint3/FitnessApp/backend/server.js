@@ -5,6 +5,7 @@ const cors = require('cors')
 const workoutRoutes = require('./routes/workouts')
 const customMiddleware = require('./middleware/customMiddleware');
 const signupRoutes = require('./routes/signup');
+const loginRoutes = require('./routes/login'); // Import the login routes
 
 // express app
 const app = express()
@@ -20,6 +21,7 @@ app.use(customMiddleware.requestLogger) // Logs request information
 // routes
 app.use('/api', signupRoutes);
 app.use('/api/workouts', workoutRoutes);
+app.use('/api', loginRoutes);
 app.use(customMiddleware.unknownEndpoint); // Handles unknown endpoints
 app.use(customMiddleware.errorHandler); // Handles other errors
 
