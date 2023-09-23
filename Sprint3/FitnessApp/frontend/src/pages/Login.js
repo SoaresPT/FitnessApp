@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const navigate = useNavigate(); // Initialize navigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,8 +22,12 @@ const Login = () => {
       if (response.ok) {
         // Login successful
         const data = await response.json();
-        // Store authentication token or user data in state/local storage/cookies
-        // Redirect to a protected route
+
+        // Store the token in session storage
+        sessionStorage.setItem("token", data.token);
+
+        // Redirect to a protected route (e.g., "/dashboard")
+        navigate("/dashboard");
       } else {
         // Login failed
         const errorData = await response.json();
