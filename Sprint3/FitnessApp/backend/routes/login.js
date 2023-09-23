@@ -23,7 +23,10 @@ router.post("/login", async (req, res) => {
     }
 
     // Generate a token
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
+    //const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
+    // Generate a token with user ID and email - this is the payload - Testing to see if this works for the dashboard frontend
+    const token = jwt.sign({ userId: user._id, email: user.email }, process.env.JWT_SECRET);
+
 
     // Send the token and a success message to the front-end
     res.status(200).json({ message: "Login successful", token });

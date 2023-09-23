@@ -23,8 +23,9 @@ const Login = () => {
         // Login successful
         const data = await response.json();
 
-        // Store the token in session storage
+        // Store the token and email in session storage
         sessionStorage.setItem("token", data.token);
+        sessionStorage.setItem("userEmail", email); // Store user email in session storage // WHAT A PAIN IN THE BUTT...
 
         // Redirect to a protected route (e.g., "/dashboard")
         navigate("/dashboard");

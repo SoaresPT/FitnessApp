@@ -6,6 +6,7 @@ const workoutRoutes = require('./routes/workouts')
 const customMiddleware = require('./middleware/customMiddleware');
 const signupRoutes = require('./routes/signup');
 const loginRoutes = require('./routes/login'); // Import the login routes
+const protectedRoutes = require('./routes/protectedRoutes'); // Import the protected routes
 
 // express app
 const app = express()
@@ -22,6 +23,7 @@ app.use(customMiddleware.requestLogger) // Logs request information
 app.use('/api', signupRoutes);
 app.use('/api/workouts', workoutRoutes);
 app.use('/api', loginRoutes);
+app.use("/api", protectedRoutes);
 app.use(customMiddleware.unknownEndpoint); // Handles unknown endpoints
 app.use(customMiddleware.errorHandler); // Handles other errors
 
