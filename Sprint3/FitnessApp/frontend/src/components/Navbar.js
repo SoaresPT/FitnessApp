@@ -31,9 +31,9 @@ const Navbar = () => {
               Explore
             </Link>
             {isAuthenticated ? (
-              <button className="links" onClick={handleLogout}>
-                Logout
-              </button>
+              <Link className="links" to="/logout">
+              Logout
+            </Link>
             ) : (
               <>
                 <Link className="links" to="/login">
