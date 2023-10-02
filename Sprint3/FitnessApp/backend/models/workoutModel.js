@@ -14,7 +14,13 @@ const workoutSchema = new Schema({
   load: {
     type: Number,
     required: true
+  },
+  // adding id of user who created a workout 
+  user_id: {
+    type: String,
+    required: true
   }
+
 }, { timestamps: true })
 
-module.exports = mongoose.model('Workout', workoutSchema)
+module.exports = mongoose.model('Workout', workoutSchema) 
