@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 // components
 import WorkoutDetails from "../components/WorkoutDetails"
@@ -11,10 +12,13 @@ const apiUrl = `${REACT_APP_API_URL}/api/workouts`;
 
 const History = () => {
   const { workouts, dispatch } = useWorkoutsContext()
+  const { user } = useAuthContext()
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch(apiUrl)
+      const response = await fetch(apiUrl, {
+        headers: { 'Authorization' : `Bearer ${user.token}` } // sending auth header with the user's token, which we grab on the bakend to protect API routes
+      })
       const allWorkouts = await response.json()
 
       if (response.ok) {
@@ -22,8 +26,11 @@ const History = () => {
       }
     }
 
-    fetchWorkouts()
-  }, [dispatch])
+    if (user) {
+      fetchWorkouts()
+    }
+
+  }, [dispatch, user])
 
   return (
     <div className="history">
