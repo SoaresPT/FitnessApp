@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
+import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 // components
 import WorkoutDetails from "../components/WorkoutDetails"
@@ -9,20 +11,26 @@ import { REACT_APP_API_URL } from '../utils/apiConfig';
 const apiUrl = `${REACT_APP_API_URL}/api/workouts`;
 
 const History = () => {
-  const [workouts, setWorkouts] = useState(null)
+  const { workouts, dispatch } = useWorkoutsContext()
+  const { user } = useAuthContext()
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch(apiUrl)
-      const json = await response.json()
+      const response = await fetch(apiUrl, {
+        headers: { 'Authorization' : `Bearer ${user.token}` } // sending auth header with the user's token, which we grab on the bakend to protect API routes
+      })
+      const allWorkouts = await response.json()
 
       if (response.ok) {
-        setWorkouts(json)
+        dispatch({ type: 'SET_WORKOUTS', payload: allWorkouts }) // payload: full array of workouts
       }
     }
 
-    fetchWorkouts()
-  }, [])
+    if (user) {
+      fetchWorkouts()
+    }
+
+  }, [dispatch, user])
 
   return (
     <div className="history">

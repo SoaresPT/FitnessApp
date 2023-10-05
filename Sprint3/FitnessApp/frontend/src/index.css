@@ -80,6 +80,10 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+input.error {
+  border: 1px solid var(--error);
+}
 form button {
   background: var(--primary);
   border: 0;
@@ -97,8 +101,16 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
+
 .links {
-
   padding: 10px;
+}
 
+/* auth forms */
+form.signup, form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
 }
