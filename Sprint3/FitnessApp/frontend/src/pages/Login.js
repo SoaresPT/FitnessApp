@@ -1,44 +1,48 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useLogin } from "../hooks/useLogin";
+//import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
-  const navigate = useNavigate(); // Initialize navigate
+  // const [error, setError] = useState(null);
+  //const navigate = useNavigate(); // Initialize navigate
+  const { login, error, isLoading } = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch("http://localhost:3001/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+    await login(email, password);
+  }
+    // try {
+    //   const response = await fetch("http://localhost:3001/api/login", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({ email, password }),
+    //   });
 
-      if (response.ok) {
-        // Login successful
-        const data = await response.json();
+    //   if (response.ok) {
+    //     // Login successful
+    //     const data = await response.json();
 
-        // Store the token and email in session storage
-        sessionStorage.setItem("token", data.token);
-        sessionStorage.setItem("userEmail", email); // Store user email in session storage // WHAT A PAIN IN THE BUTT...
+    //     // Store the token and email in session storage
+    //     sessionStorage.setItem("token", data.token);
+    //     sessionStorage.setItem("userEmail", email); // Store user email in session storage // WHAT A PAIN IN THE BUTT...
 
-        // Redirect to a protected route (e.g., "/dashboard")
-        navigate("/dashboard");
-      } else {
-        // Login failed
-        const errorData = await response.json();
-        setError(errorData.error);
-      }
-    } catch (error) {
-      // Handle network or other errors
-      console.error("Error:", error);
-    }
-  };
+    //     // Redirect to a protected route (e.g., "/dashboard")
+    //     navigate("/dashboard");
+    //   } else {
+    //     // Login failed
+    //     const errorData = await response.json();
+    //     setError(errorData.error);
+    //   }
+    // } catch (error) {
+    //   // Handle network or other errors
+    //   console.error("Error:", error);
+    // }
+  // };
 
   return (
     <form className="login" onSubmit={handleSubmit}>
@@ -57,9 +61,9 @@ const Login = () => {
         value={password}
       />
 
-      {error && <p>{error}</p>}
+      <button disabled={isLoading}>Log in</button>
 
-      <button>Log in</button>
+      {error && <div className="error">{error}</div>}
     </form>
   );
 };
