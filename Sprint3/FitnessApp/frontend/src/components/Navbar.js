@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const handleClick = () => {
     logout()
-    
+
   }
 
   // const handleLogout = () => {
@@ -45,16 +45,15 @@ const Navbar = () => {
               Explore
             </Link>
             {user && (
-              <div>
-                <span>{user.email}</span>
+              <>
                 <Link className="links" onClick={handleClick} to="/">Log out</Link>
-              </div>
+              </>
             )}
             {!user && (
-              <div>
+              <>
                 <Link className="links" to="/login">Login</Link>
                 <Link className="links" to="/signup">Signup</Link>
-              </div>
+              </>
             )}
           </div>
         </nav>
