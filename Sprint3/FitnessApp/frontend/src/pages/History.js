@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 import { useEffect } from "react"
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 // components
+=======
+import { useEffect, useState } from "react"
+>>>>>>> 839118986818b7fdfdc519952f251769f978a935
 import WorkoutDetails from "../components/WorkoutDetails"
 import WorkoutForm from "../components/WorkoutForm"
 import { REACT_APP_API_URL } from '../utils/apiConfig';
@@ -12,26 +16,25 @@ import './star.jpg'
 const apiUrl = `${REACT_APP_API_URL}/api/workouts`;
 
 const History = () => {
-  const { workouts, dispatch } = useWorkoutsContext()
-  const { user } = useAuthContext()
+  const [workouts, setWorkouts] = useState(null)
+  const [favorites, setFavorites] = useState([])
+  const [areFavoritesVisible, setAreFavoritesVisible] = useState(false)
+
+  const retrieveFavorites = () => {
+    let favorites = JSON.parse(sessionStorage.getItem('favoriteExercises')) || [];
+    setFavorites(favorites);
+  };
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch(apiUrl, {
-        headers: { 'Authorization' : `Bearer ${user.token}` } // sending auth header with the user's token, which we grab on the bakend to protect API routes
-      })
-      const allWorkouts = await response.json()
-
+      const response = await fetch(apiUrl)
+      const json = await response.json()
       if (response.ok) {
         dispatch({ type: 'SET_WORKOUTS', payload: allWorkouts }) // payload: full array of workouts
       }
     }
-
-    if (user) {
-      fetchWorkouts()
-    }
-
-  }, [dispatch, user])
+    fetchWorkouts()
+  }, [])
 
   useEffect(() => {
     retrieveFavorites()
