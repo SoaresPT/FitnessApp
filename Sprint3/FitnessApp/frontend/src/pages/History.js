@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-import { useEffect } from "react"
-import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
-import { useAuthContext } from "../hooks/useAuthContext";
-
-// components
-=======
 import { useEffect, useState } from "react"
->>>>>>> 839118986818b7fdfdc519952f251769f978a935
 import WorkoutDetails from "../components/WorkoutDetails"
 import WorkoutForm from "../components/WorkoutForm"
 import { REACT_APP_API_URL } from '../utils/apiConfig';
@@ -30,7 +22,7 @@ const History = () => {
       const response = await fetch(apiUrl)
       const json = await response.json()
       if (response.ok) {
-        dispatch({ type: 'SET_WORKOUTS', payload: allWorkouts }) // payload: full array of workouts
+        setWorkouts(json)
       }
     }
     fetchWorkouts()
