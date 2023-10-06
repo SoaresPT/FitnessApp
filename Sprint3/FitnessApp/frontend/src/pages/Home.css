@@ -1,22 +1,22 @@
-/* styles.css */
+
 .photo{
     height: 120%;
     width: 95%;
     position:absolute;
     top: 0%;
     left: 2%;
-    background-image: url('../ha.jpeg'); /* Replace 'your-image.jpg' with the path to your image */
-    background-size: 110%; /* Cover the entire viewport */
-    background-position:top; /* Center the image horizontally and vertically */
-    background-repeat: no-repeat; /* Do not repeat the image */
+    background-image: url('../ha.jpeg'); 
+    background-size: 110%; 
+    background-position:top; 
+    background-repeat: no-repeat; 
     
 }
 .foreground{
-    color: rgb(0, 0, 0); /* Text color */
-    text-align:start; /* Center-align the text horizontally */
-    position: absolute; /* Position the text absolutely within the container */
-    top: 50%; /* Move the text 50% from the top of its containing block */
-    left: 24%; /* Move the text 50% from the left of its containing block */
+    color: rgb(0, 0, 0);
+    text-align:start;
+    position: absolute; 
+    top: 50%;
+    left: 24%; 
     transform: translate(-50%, -50%); 
 }
 h1 {
@@ -40,11 +40,11 @@ h1 {
     font-family: 'Concert One', cursive;
     font-size: 200%;
     font-weight:bolder;
-    color: rgb(0, 0, 0); /* Text color */
-    text-align:start; /* Center-align the text horizontally */
-    position: absolute; /* Position the text absolutely within the container */
-    top: 120%; /* Move the text 50% from the top of its containing block */
-    left: 50%; /* Move the text 50% from the left of its containing block */
+    color: rgb(0, 0, 0); 
+    text-align:start; 
+    position: absolute; 
+    top: 120%; 
+    left: 50%; 
     transform: translate(-50%, -50%); 
     
   }
@@ -52,22 +52,22 @@ h1 {
     font-family: 'Concert One', cursive;
     font-size: 200%;
     font-weight:bolder;
-    color: rgb(0, 0, 0); /* Text color */
-    text-align:start; /* Center-align the text horizontally */
-    position: absolute; /* Position the text absolutely within the container */
-    top: 123%; /* Move the text 50% from the top of its containing block */
-    left: 50%; /* Move the text 50% from the left of its containing block */
+    color: rgb(0, 0, 0); 
+    text-align:start; 
+    position: absolute; 
+    top: 123%; 
+    left: 50%; 
     transform: translate(-50%, -50%); 
     }
   .fourth {
     font-family: 'Concert One', cursive;
     font-size: 200%;
     font-weight:bolder;
-    color: rgb(0, 0, 0); /* Text color */
-    text-align:start; /* Center-align the text horizontally */
-    position: absolute; /* Position the text absolutely within the container */
-    top: 126%; /* Move the text 50% from the top of its containing block */
-    left: 50%; /* Move the text 50% from the left of its containing block */
+    color: rgb(0, 0, 0); 
+    text-align:start; 
+    position: absolute; 
+    top: 126%; 
+    left: 50%; 
     transform: translate(-50%, -50%); 
     
   }
@@ -75,18 +75,18 @@ h1 {
 
 .button {
     
-    background-color: #ffffff; /* Background color */
-    color: #000000; /* Text color */
+    background-color: #ffffff; 
+    color: #000000; 
     font-family: 'Concert One', cursive;
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Text size */
+    border-radius: 5px; 
+    font-size: 16px;
     position: absolute;
     top: 140%;
     left: 37.7%;
 }
 
 .button:hover {
-    background-color: #ffffff;
+
     color: #fff;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -99,11 +99,11 @@ h1 {
 }
 .button2 {
     
-    background-color: #ffffff; /* Background color */
-    color: #000000; /* Text color */
+    background-color: #ffffff; 
+    color: #000000;
     font-family: 'Concert One', cursive;
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Text size */
+    border-radius: 5px; 
+    font-size: 16px; 
     position: absolute;
     top: 140%;
     left: 57.7%;
