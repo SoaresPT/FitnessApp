@@ -1,6 +1,6 @@
 # Fitness App API Documentation
 
-This documentation provides information on the endpoints and usage of the Fitness App API.
+This documentation provides information on the endpoints and usage of the Fitness App API. The live version can be found at [https://group1-jh7u.onrender.com/](https://group1-jh7u.onrender.com/)
 
 ## Table of Contents
 
