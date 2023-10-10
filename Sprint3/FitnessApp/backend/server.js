@@ -28,3 +28,5 @@ app.use(customMiddleware.unknownEndpoint); // Handles unknown endpoints
 app.use(customMiddleware.errorHandler); // Handles other errors
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
+
+module.exports = app;
