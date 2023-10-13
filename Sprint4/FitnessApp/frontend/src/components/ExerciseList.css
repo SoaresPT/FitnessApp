@@ -1,0 +1,118 @@
+.exercise-list {
+  height: 100vh;
+  overflow-y: auto;
+  width: 600px;
+  max-width: 40vw;
+  position: fixed;
+  right: 1%;
+  top: 0;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+button {
+  /* margin-left: 35%; */
+  background-color: #ffffff;
+  color: #2b2b2b;
+  cursor: pointer;
+  font-family: "Concert One", cursive;
+  border-radius: 5px;
+  border-color: #EDEDED;
+  font-size: 16px;
+  box-shadow: 0 3px #D2D2D2;
+}
+/* .giffi {
+  margin-left: 15%;
+} */
+
+.plusbutton {
+  align-self: center;
+}
+
+button:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  box-shadow: 0 5px #d2d2d2;
+  transform: translateY(3px);
+}
+
+.exercise-card {
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.exercise-card h2 {
+  color: var(--ex-list-headers);
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.exercise-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.exercise-header {
+  color: var(--ex-list-headers);
+}
+
+.exercise-header-value{
+  color: #000;
+}
+
+
+@media only screen and (max-width: 1106px) {
+  .exercise-list {
+    font-size: 90%;
+  }
+}
+
+@media only screen and (max-width: 935px) {
+  .exercise-list {
+    font-size: 80%;
+  }
+
+  ol {
+    padding-left: 15px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .exercise-list {
+    font-size: 80%;
+  }
+
+  .exercise-header {
+    text-align: center;
+  }
+
+
+}
+
+@media only screen and (max-width: 592px) {
+  #instructions {
+    display: none;
+  }
+  .exercise-list {
+    font-size: 80%;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .exercise-list {
+    font-size: 80%;
+  }
+
+  .exercise-card h2 {
+    font-size: 14px;
+  }
+
+}
